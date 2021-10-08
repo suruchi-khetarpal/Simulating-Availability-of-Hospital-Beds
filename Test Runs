@@ -1,0 +1,28 @@
+# Sample run 1
+demandList=[1,2,1,0,2,3]
+beds=2
+stay=2
+admissionRecord=admissionSimulation(demandList,beds,stay)
+print(f'Day\tDemand\tAdmitted')
+for i in range(len(demandList)):
+    print(f'{i}\t{demandList[i]}\t{admissionRecord[i]}')
+    
+    
+ # Sample run 2
+demandList=[5,8,6,8,4,4,8,6,1]
+beds=7
+stay=3
+admissionRecord=admissionSimulation(demandList,beds,stay)
+print(f'Day\tDemand\tAdmitted')
+for i in range(len(demandList)):
+    print(f'{i}\t{demandList[i]}\t{admissionRecord[i]}')
+    
+ 
+ # Sample run 3
+demandList=[5,8,6,4,4,4,8,1,3]
+beds=7
+stay=3
+admissionRecord=admissionSimulation(demandList,beds,stay)
+print(f'Day\tDemand\tAdmitted')
+for i in range(len(demandList)):
+    print(f'{i}\t{demandList[i]}\t{admissionRecord[i]}')

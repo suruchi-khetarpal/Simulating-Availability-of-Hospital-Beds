@@ -1,0 +1,29 @@
+def admissionSimulation(demandList,beds,stay):
+    day=0
+    admissionRecord=[]
+    for demand in demandList:
+        if day>=stay:
+            discharge=admissionRecord[day-stay]
+        else:
+            discharge=0
+        if day>=1:
+            beds=beds-admissionRecord[-1]+discharge
+        admitted=min(beds,demand)
+        admissionRecord.append(admitted)
+        day+=1
+    return admissionRecord
+    
+    
+    # Alternative solution
+def admissionSimulation(demandList,beds,stay):
+    admissionRecord=[]
+    available=beds
+    day=0
+    for demand in demandList:
+        if day>=stay:
+            available+=admissionRecord[day-stay]
+        admitted=min(available,demand)
+        admissionRecord.append(admitted)
+        available-=admitted
+        day+=1
+    return admissionRecord
